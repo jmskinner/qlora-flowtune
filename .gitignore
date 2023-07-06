@@ -167,3 +167,20 @@ data/training/*
 
 # VSCode Debug
 .vscode
+
+# Data Files
+*.json
+*.csv
+tb-logs
+checkpoints
+flow_ml.egg-info
+flow_ml.build
+*.joblib
+*.torch
+*.keras
+*.parquet
+*.coverage*
+*.pkl
+*.bin
+archive
+logs
