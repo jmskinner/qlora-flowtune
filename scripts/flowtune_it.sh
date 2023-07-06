@@ -1,0 +1,28 @@
+python qlora.py \
+    --model_name_or_path /home/ubuntu/repos/qlora-flowtune/local_models/Wizard-Vicuna-30B-Uncensored-fp16 \
+    --output_dir ./output \
+    --dataset /home/ubuntu/repos/qlora-flowtune/wizardLM_training_41K.json \
+    --dataset_format= input-output \
+    --do_train True \
+    --do_eval True \
+    --do_mmlu_eval False \
+    --source_max_len 2048 \
+    --target_max_len 64 \
+    --per_device_train_batch_size 2 \
+    --per_device_eval_batch_size 2 \
+    --gradient_accumulation_steps 2 \
+    --logging_steps 10 \
+    --max_steps 30000 \
+    --save_strategy steps \
+    --data_seed 42 \
+    --save_steps 1000 \
+    --save_total_limit 20 \
+    --evaluation_strategy steps \
+    --eval_dataset_size 5000 \
+    --max_eval_samples 100 \
+    --eval_steps 50 \
+    --optim paged_adamw_32bit \
+    --learning_rate 0.0003 \
+    --lora_r 64 \
+    --max_memory_MB 36000\
+    --bf16
